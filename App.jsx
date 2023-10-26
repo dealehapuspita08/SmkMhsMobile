@@ -1,54 +1,20 @@
-import { View, Text, TextInput, Image, TouchableOpacity, Button, Alert} from 'react-native'
-import React from 'react'
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from './src/pages/Home';
+import Detail from './src/pages/Detail';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View>
-      <View style={{
-        height: 52,
-        backgroundColor: 'red',
-        marginHorizontal: 16,
-        borderRadius: 100,
-        marginTop: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: 16,
-        paddingVertical: 16,
-      }}>
-              <Image
-        source={require('../AwesomeProject/src/icon/logo.png')}
-        style={{
-          width: 140,
-          height: 32,
-        }}/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detail" component={Detail} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-        <Image
-        source={require('../AwesomeProject/src/icon/Vector.png')}
-        style={{
-          width: 20,
-          height: 20,
-        }}/>
-        <Text style={{
-          marginTop: 4,
-          marginLeft: 16,
-          fontWeight: 'bold',
-          color: 'black',
-          fontSize: 22,
-        }}>KANTIN MULTISTUDI</Text>
-        <View style={{marginTop: 20, flexDirection: 'row'}}>
-        <View
-        style={{
-          height: 150,
-          borderWidth: 1,
-          backgroundColor: 'red',
-          borderRadius: 12,
-        }}></View>
-        
-        </View>
-        </View>
-      </View>
-   
-  )
-  }
-export default App
+export default App;
