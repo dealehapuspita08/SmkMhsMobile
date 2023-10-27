@@ -70,7 +70,7 @@ const Home = ({navigation}) => {
         }}>
         Menu Makanan
       </Text>
-
+        
       <View style={{marginTop: 20, flexDirection: 'row'}}>
         <View
           style={{
