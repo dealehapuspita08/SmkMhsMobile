@@ -6,12 +6,13 @@ import {
   TouchableOpacity,
   Button,
   Alert,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 
 const Home = ({navigation}) => {
   return (
-    <View>
+    <ScrollView>
       <View
         style={{
           height: 52,
@@ -80,7 +81,8 @@ const Home = ({navigation}) => {
             padding: 3,
             marginTop: 2,
           }}>
-          <Image
+            <TouchableOpacity      onPress={() => navigation.navigate('Detail')}>
+          <Image    
             source={require('../assets/icon/burger.png')}
             style={{
               marginRight: 16,
@@ -89,7 +91,9 @@ const Home = ({navigation}) => {
               height: 160,
               borderRadius: 12,
             }}
+       
           />
+          </TouchableOpacity>
         </View>
 
         <View
@@ -252,22 +256,8 @@ const Home = ({navigation}) => {
         </View>
       </View>
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Detail')}
-        // onPress={() => navigation.navigate('Detail')}
-        style={{
-          paddingHorizontal: 12,
-          paddingVertical: 6,
-          alignItems: 'center',
-          borderRadius: 6,
-          backgroundColor: '#C40001',
-          marginTop: 25,
-          borderWidth: 1,
-          zIndex: 999,
-        }}>
-        <Text style={{color: '#ffffff'}}>Menuju Detail</Text>
-      </TouchableOpacity>
-    </View>
+     
+    </ScrollView>
   );
 };
 export default Home;

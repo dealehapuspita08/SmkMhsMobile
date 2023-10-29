@@ -5,18 +5,19 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  ScrollView
 } from 'react-native';
 import React from 'react';
 
 const Detail = ({navigation}) => {
   return (
-    <View style={style.hero}>
+    <ScrollView style={style.hero}>
       <View style={style.navcon}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <View style={style.iconnav}>
-            <Image
+            <Image 
               style={style.iconimg}
-              source={require('../assets/icon/jeruk.png')}
+              source={require('../assets/icon/frameback.png')}
             />
           </View>
         </TouchableOpacity>
@@ -36,7 +37,7 @@ const Detail = ({navigation}) => {
         <View style={style.holdabt}>
           <Image
             style={style.fotomakan}
-            source={require('../assets/icon/jeruk.png')}
+            source={require('../assets/icon/burger.png')}
           />
           <View>
             <Text
@@ -46,7 +47,7 @@ const Detail = ({navigation}) => {
                 fontWeight: 'bold',
                 fontSize: 20,
               }}>
-              Burger Keju
+              Beef Burger
             </Text>
             <Text style={{color: '#A4A4A4', fontSize: 14, marginTop: 12}}>
               hamburger dengan sepotong keju leleh di atas patty daging, Daging
@@ -69,18 +70,31 @@ const Detail = ({navigation}) => {
                 height: 64,
               }}
             />
+      <TouchableOpacity style={{
+        height: 52,
+      borderRadius: 100,
+        backgroundColor : 'red',
+        marginTop: 15,
+       
+
+      }} onPress={() => navigation.navigate('Success')}> 
+        <Text style={{
+           color: 'white',
+           textAlign: 'center',
+           marginVertical: 15,
+        }}> 
+          Konfirmasi Pesanan
+        </Text>
+      </TouchableOpacity>
+            
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Info')}>
-            <View style={style.konfirm}>
-              <Text style={{color: 'white', fontSize: 18, letterSpacing: 1}}>
-                Konfirmasi Pemesanan
-              </Text>
-            </View>
-          </TouchableOpacity>
+             
         </View>
+      
       </View>
-    </View>
+     
+    </ScrollView>
   );
 };
 
@@ -104,6 +118,7 @@ const style = StyleSheet.create({
     marginRight: 16,
   },
   iconimg: {
+   marginRight: 10,
     width: 60,
     height: 60,
   },
@@ -116,7 +131,7 @@ const style = StyleSheet.create({
 
   fotomakan: {
     width: '100%',
-    height: 550,
+    height: 250,
     borderRadius: 16,
     resizeMode: 'cover',
     display: 'flex',
@@ -136,7 +151,6 @@ const style = StyleSheet.create({
 
   pesan: {
     height: 130,
-    marginBottom: 209,
   },
 
   konfirm: {
